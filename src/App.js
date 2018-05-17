@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Cats from './pages/Cats'
@@ -32,6 +31,9 @@ class App extends Component {
       ]
     }
   }
+  handleCat(data){
+    console.log(data)
+  }
   render() {
     return (
       <div className="App">
@@ -39,7 +41,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/cats" render={ (props) => <Cats cats={this.state.cats} />} />
-            <Route exact path="/" component={NewCat} />
+            <Route exact path="/" render={ (props) => <NewCat handleNewCat={this.handleCat.bind(this)} />} />
           </Switch>
         </Router>
       </div>

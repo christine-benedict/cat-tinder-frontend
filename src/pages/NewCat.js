@@ -15,22 +15,46 @@ class NewCat extends Component{
   handleChange(event){
     let {form} = this.state
     form[event.target.name] = event.target.value
-    this.setState({form})
+    this.setState({form: form})
+  }
+
+  handleSubmit(event){
+    this.props.handleNewCat(this.state.form)
+    event.preventDefault()
   }
 
   render(){
     return(
-      <form>
-        <FormGroup>
-          <ControlLabel>Cat Name: </ControlLabel>
-          <FormControl type="text" name="name" value={this.state.form.name} />
-          <ControlLabel>Age: </ControlLabel>
-          <FormControl type="number" name="age" value={this.state.form.age} />
-          <ControlLabel>Enjoys: </ControlLabel>
-          <FormControl type="text" name="enjoys" value={this.state.form.enjoys} />
-          <FormControl type="submit" name="enjoys" onClick={this.handleChange.bind(this)} value="Add New Cat" />
-        </FormGroup>
-      </form>
+      <div>
+        <form>
+            <ControlLabel id="name">Cat Name: </ControlLabel>
+            <FormControl
+              type="text"
+              name="name"
+              placeholder="Name"
+              onChange={this.handleChange.bind(this)}
+              value={this.state.form.name} />
+            <ControlLabel id="age">Age: </ControlLabel>
+            <FormControl
+              type="number"
+              name="age"
+              placeholder="Age"
+              onChange={this.handleChange.bind(this)}
+              value={this.state.form.age} />
+            <ControlLabel id="enjoys">Enjoys: </ControlLabel>
+            <FormControl
+              type="text"
+              name="enjoys"
+              placeholder="Enjoys"
+              onChange={this.handleChange.bind(this)} value={this.state.form.enjoys} />
+            <FormControl
+              type="submit"
+              name="enjoys"
+              id="submit"
+              onClick={this.handleSubmit.bind(this)}
+              value="Create Cat Profile" />
+        </form>
+      </div>
     )
   }
 }
