@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Header } from 'react-bootstrap'
 
 class Header extends Component{
   render(){
     return(
-      <Header>
+      <div>
         Cat Tinder
-      </Header>
+      </div>
     )
   }
 }
