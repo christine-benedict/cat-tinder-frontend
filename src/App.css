@@ -38,6 +38,12 @@
 }
 
 #cat-header {
-  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 20px;
   width: 300px;
+}
+
+#navbar{
+  width:30%;
+  padding-right: 5%;
 }

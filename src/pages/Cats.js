@@ -15,9 +15,9 @@ class Cats extends Component {
                 <ListGroupItem key={index} header={
                   <h4>
                     <span className='cat-name'>
-                      {cat.name} 
+                      {cat.name}{" "}
                     </span>
-                     - <small className='cat-age'>{cat.age} years old</small>
+                    - <small className='cat-age'>{cat.age} years old</small>
                   </h4>
                 }>
                 <span className='cat-enjoys'>{cat.enjoys}
