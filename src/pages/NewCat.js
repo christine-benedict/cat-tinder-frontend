@@ -35,20 +35,20 @@ class NewCat extends Component{
                 name="name"
                 placeholder="Name"
                 onChange={this.handleChange.bind(this)}
-                value={this.state.form.name} />
+                value={this.state.form.name} /><br />
               <ControlLabel id="age">Age: </ControlLabel>
               <FormControl
                 type="number"
                 name="age"
                 placeholder="Age"
                 onChange={this.handleChange.bind(this)}
-                value={this.state.form.age} />
+                value={this.state.form.age} /><br />
               <ControlLabel id="enjoys">Enjoys: </ControlLabel>
               <FormControl
                 type="text"
                 name="enjoys"
                 placeholder="Enjoys"
-                onChange={this.handleChange.bind(this)} value={this.state.form.enjoys} />
+                onChange={this.handleChange.bind(this)} value={this.state.form.enjoys} /> <br />
               <FormControl
                 type="submit"
                 name="enjoys"

@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  display: flex;
+  align-content: center;
 }
 
 .App-logo {
@@ -27,6 +28,16 @@
   to { transform: rotate(360deg); }
 }
 
-Panel{
-    width: 300px
+#create-cat-form {
+  padding-top: 100px;
+  width: 300px
+}
+
+#submit{
+  width: 200px
+}
+
+#cat-header {
+  margin-left: 0;
+  width: 300px;
 }

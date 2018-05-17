@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header /><br />
         <Router>
           <Switch>
             <Route exact path="/cats" render={ (props) => <Cats cats={this.state.cats} />} />

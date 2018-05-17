@@ -7,7 +7,8 @@ class Header extends Component{
       <div>
         <Navbar>
           <Navbar.Header>
-            <h1>Cat Tinder</h1>
+            <h1>Cat Tinder</h1> <hr />
+            <img id="cat-header" src="../images/cat.jpg"/>
           </Navbar.Header>
         </Navbar>
       </div>
