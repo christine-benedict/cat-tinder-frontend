@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {ControlLabel, FormGroup, FormControl} from 'react-bootstrap'
+import {Panel, ControlLabel, FormGroup, FormControl} from 'react-bootstrap'
 
 class NewCat extends Component{
   constructor(props){
@@ -19,41 +19,45 @@ class NewCat extends Component{
   }
 
   handleSubmit(event){
-    this.props.handleNewCat(this.state.form)
+    this.props.handleNew(this.state.form)
     event.preventDefault()
   }
 
   render(){
     return(
       <div>
-        <form>
-            <ControlLabel id="name">Cat Name: </ControlLabel>
-            <FormControl
-              type="text"
-              name="name"
-              placeholder="Name"
-              onChange={this.handleChange.bind(this)}
-              value={this.state.form.name} />
-            <ControlLabel id="age">Age: </ControlLabel>
-            <FormControl
-              type="number"
-              name="age"
-              placeholder="Age"
-              onChange={this.handleChange.bind(this)}
-              value={this.state.form.age} />
-            <ControlLabel id="enjoys">Enjoys: </ControlLabel>
-            <FormControl
-              type="text"
-              name="enjoys"
-              placeholder="Enjoys"
-              onChange={this.handleChange.bind(this)} value={this.state.form.enjoys} />
-            <FormControl
-              type="submit"
-              name="enjoys"
-              id="submit"
-              onClick={this.handleSubmit.bind(this)}
-              value="Create Cat Profile" />
-        </form>
+        <Panel id="create-cat-form">
+          <form>
+            <FormGroup>
+              <ControlLabel id="name">Cat Name: </ControlLabel>
+              <FormControl
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={this.handleChange.bind(this)}
+                value={this.state.form.name} />
+              <ControlLabel id="age">Age: </ControlLabel>
+              <FormControl
+                type="number"
+                name="age"
+                placeholder="Age"
+                onChange={this.handleChange.bind(this)}
+                value={this.state.form.age} />
+              <ControlLabel id="enjoys">Enjoys: </ControlLabel>
+              <FormControl
+                type="text"
+                name="enjoys"
+                placeholder="Enjoys"
+                onChange={this.handleChange.bind(this)} value={this.state.form.enjoys} />
+              <FormControl
+                type="submit"
+                name="enjoys"
+                id="submit"
+                onClick={this.handleSubmit.bind(this)}
+                value="Create Cat Profile" />
+              </FormGroup>
+          </form>
+        </Panel>
       </div>
     )
   }

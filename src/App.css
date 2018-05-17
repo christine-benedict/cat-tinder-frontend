@@ -27,6 +27,6 @@
   to { transform: rotate(360deg); }
 }
 
-FormGroup{
+Panel{
     width: 300px
 }

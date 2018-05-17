@@ -41,7 +41,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/cats" render={ (props) => <Cats cats={this.state.cats} />} />
-            <Route exact path="/" render={ (props) => <NewCat handleNewCat={this.handleCat.bind(this)} />} />
+            <Route exact path="/" render={ (props) => <NewCat handleNew={this.handleCat.bind(this)} />} />
           </Switch>
         </Router>
       </div>
