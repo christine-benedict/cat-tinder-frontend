@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Panel, ControlLabel, FormGroup, FormControl} from 'react-bootstrap'
+import {Redirect} from 'react-router-dom'
 
 class NewCat extends Component{
   constructor(props){
@@ -57,6 +58,7 @@ class NewCat extends Component{
                 value="Create Cat Profile" />
               </FormGroup>
           </form>
+          {this.props.success && <Redirect to="/cats" />}
         </Panel>
       </div>
     )

@@ -4,36 +4,32 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Cats from './pages/Cats'
 import NewCat from './pages/NewCat'
 import Header from './components/Header'
+import { getCats, createCat } from './api'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      cats: [
-        {
-          id: 1,
-          name: 'Morris',
-          age: 2,
-          enjoys: "Long walks on the beach."
-        },
-        {
-          id: 2,
-          name: 'Paws',
-          age: 4,
-          enjoys: "Snuggling by the fire."
-        },
-        {
-          id: 3,
-          name: 'Mr. Meowsalot',
-          age: 12,
-          enjoys: "Being in charge."
-        }
-      ]
+      cats: [],
+      newCatSuccess: false
     }
   }
-  handleCat(data){
-    console.log(data)
+
+  componentWillMount(){
+    getCats().then( APIcats => {
+      this.setState( {cats: APIcats} )
+    })
   }
+
+  handleCat(data){
+    createCat(data).then( successCat => {
+      console.log("SUCCESS! New cat:", successCat)
+      getCats().then( APIcats => {
+          this.setState({cats:APIcats, newCatSuccess: true})
+        })
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,7 +37,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/cats" render={ (props) => <Cats cats={this.state.cats} />} />
-            <Route exact path="/" render={ (props) => <NewCat handleNew={this.handleCat.bind(this)} />} />
+            <Route exact path="/" render={ (props) => <NewCat handleNew={this.handleCat.bind(this)} success={this.state.newCatSuccess} />} />
           </Switch>
         </Router>
       </div>
